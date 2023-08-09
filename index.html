@@ -9,7 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark numberSelected">
 
     <div class="container mt-5 bg-light bg-gradient">
         <div class="row">
@@ -29,10 +29,10 @@
                     <div class="col"></div>
                     <div class="col fs-1">
                         <div class="w-75 d-flex justify-content-center text-danger fw-bolder text-center">
-                            <span class="w-25" id="number1">1</span>
-                            <span class="w-25" id="numer2">1</span>
-                            <span class="w-25" id="number3">1</span>
-                            <span class="w-25" id="number4">1</span>
+                            <span class="w-25" id="numberSecret0">1</span>
+                            <span class="w-25" id="numberSecret1">1</span>
+                            <span class="w-25" id="numberSecret2">1</span>
+                            <span class="w-25" id="numberSecret3">1</span>
                         </div>
                     </div>
                     <div class="col"></div>
@@ -40,11 +40,12 @@
                 <div class="row">
                     <div class="col"></div>
                     <div class="col fs-1">
-                        <div class="border border-dark w-75 d-flex justify-content-center fw-bolder text-center">
-                            <span class="w-25" id="number1">1</span>
-                            <span class="w-25" id="numer2">1</span>
-                            <span class="w-25" id="number3">1</span>
-                            <span class="w-25" id="number4">1</span>
+                        <div
+                            class="border border-dark numberSelected w-75 d-flex justify-content-center fw-bolder text-center">
+                            <span class="w-25 border-dark numberSelected border-end" id="numberUser0">1</span>
+                            <span class="w-25 border-dark numberSelected border-end" id="numberUser1">1</span>
+                            <span class="w-25 border-dark numberSelected border-end" id="numberUser2">1</span>
+                            <span class="w-25" id="numberUser3">1</span>
                         </div>
 
                     </div>
@@ -71,34 +72,34 @@
                 <div class="row mt-4">
                     <div class="col"></div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">0</button>
+                        <button type="button" class="btn btn-dark numberSelected">0</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">1</button>
+                        <button type="button" class="btn btn-dark numberSelected">1</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">2</button>
+                        <button type="button" class="btn btn-dark numberSelected">2</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">3</button>
+                        <button type="button" class="btn btn-dark numberSelected">3</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">4</button>
+                        <button type="button" class="btn btn-dark numberSelected">4</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">5</button>
+                        <button type="button" class="btn btn-dark numberSelected">5</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">6</button>
+                        <button type="button" class="btn btn-dark numberSelected">6</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">7</button>
+                        <button type="button" class="btn btn-dark numberSelected">7</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">8</button>
+                        <button type="button" class="btn btn-dark numberSelected">8</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-dark">9</button>
+                        <button type="button" class="btn btn-dark numberSelected">9</button>
                     </div>
                     <div class="col"></div>
 
@@ -110,13 +111,13 @@
 
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-primary">Indagar</button>
+                        <button id="investigateButton" type="button" class="btn btn-primary">Indagar</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-success">Arriesgar</button>
+                        <button id="confirmButton" type="button" class="btn btn-success">Arriesgar</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-danger">Limpiar</button>
+                        <button id="cleanButton" type="button" class="btn btn-danger">Limpiar</button>
                     </div>
                     <div class="col">
 
