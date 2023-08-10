@@ -1,5 +1,6 @@
 "use strict";
 const headerLevel = document.getElementById("headerLevel");
+const countdownDisplay = document.getElementById("countdown");
 const attemptsMade = document.getElementById("attemptsMade");
 const targetLevelTitle = document.getElementById("targetLevelTitle");
 const numberSecretContent = document.getElementById("numberSecretContent");
@@ -19,10 +20,12 @@ var numberUser = [];
 var numberSecret = [];
 var currentLevel = 0;
 var currentLengthNumbers = 0;
+var remainingTime;
+var interval;
 const levels = [
   {
     number: 1,
-    time: 60,
+    time: 10,
     lengthSecret: 3,
     lengthSelecteables: 5,
   },
@@ -32,7 +35,36 @@ const levels = [
     lengthSecret: 4,
     lengthSelecteables: 6,
   },
+  {
+    number: 3,
+    time: 150,
+    lengthSecret: 4,
+    lengthSelecteables: 9,
+  },
 ];
+
+const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+};
+
+const updateCountdown = () => {
+  if (remainingTime > 0) {
+    remainingTime--;
+    countdownDisplay.textContent = formatTime(remainingTime);
+  } else {
+    clearInterval(interval);
+    alert("¡Tiempo agotado!");
+  }
+};
+
+const initTimer = () => {
+  remainingTime = levels[currentLevel - 1].time;
+  countdownDisplay.textContent = formatTime(remainingTime);
+
+  interval = setInterval(updateCountdown, 1000);
+};
 
 const clikButtonModalResult = () => {
   modalResultButton.addEventListener("click", (event) => {
@@ -116,6 +148,7 @@ const setNextLevel = () => {
   generateBoard();
   generateRandomNumbers();
   generateNumberSelecteables();
+  initTimer();
 };
 
 const clickCleanButton = () => {

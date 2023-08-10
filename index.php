@@ -11,19 +11,28 @@
 <body class="bg-dark numberSelected">
     <div class="container mt-5 bg-light bg-gradient">
         <div class="row bg-info text-white">
-            <?php include('header.php') ?>
+            <div id="headerLevel" class="p-2 col d-flex justify-content-start"></div>
+            <div id="headerScore" class="p-2 col d-flex justify-content-center"></div>
+            <div id="headerTimer" class="p-2 col d-flex justify-content-end">
+                <p id="countdown"></p>
+            </div>
         </div>
         <div class="row" style="height: 500px;">
             <div class="col-8">
                 <?php include('content.php') ?>
             </div>
             <div class="col-4 bg-success">
-                <?php include('sidebar.php') ?>
+                <div class="row text-white text-center fw-bolder">
+                    <div class="col">#Intento</div>
+                    <div class="col">Numero</div>
+                    <div class="col">Respuesta</div>
+                </div>
+                <div class="row" id="attemptsMade"></div>
             </div>
         </div>
         <div class="row bg-warning" style="height: 100px;">
             <div class="col-8">
-                <?php include('footerEntryData.php') ?>
+                <div id="numberSelecteables" class="row mt-4"></div>
             </div>
             <div class="col-4">
                 <?php include('footerActionsButtons.php') ?>

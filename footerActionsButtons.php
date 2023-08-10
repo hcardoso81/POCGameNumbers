@@ -10,5 +10,4 @@
                    <button id="cleanButton" type="button" class="btn btn-danger">Limpiar</button>
                </div>
                <div class="col"></div>
-
            </div>
