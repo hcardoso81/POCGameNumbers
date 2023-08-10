@@ -27,12 +27,12 @@
                 </div>
                 <div class="mt-5 row" style="height:300px">
                     <div class="col"></div>
-                    <div class="col fs-1">
+                    <div id="numberSecretDiv" class="col fs-1 d-none">
                         <div class="w-75 d-flex justify-content-center text-danger fw-bolder text-center">
-                            <span class="w-25" id="numberSecret0">1</span>
-                            <span class="w-25" id="numberSecret1">1</span>
-                            <span class="w-25" id="numberSecret2">1</span>
-                            <span class="w-25" id="numberSecret3">1</span>
+                            <span class="w-25" id="numberSecret0"></span>
+                            <span class="w-25" id="numberSecret1"></span>
+                            <span class="w-25" id="numberSecret2"></span>
+                            <span class="w-25" id="numberSecret3"></span>
                         </div>
                     </div>
                     <div class="col"></div>
@@ -124,6 +124,22 @@
 
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalResultDiv" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                </div>
+                <div id="modalBodyDiv" class="modal-body text-center">
+
+                </div>
+                <div class="modal-footer justify-content-center border-0">
+                    <button type="button" class="btn btn-primary" onclick="location.reload();">Aceptar</button>
                 </div>
             </div>
         </div>
