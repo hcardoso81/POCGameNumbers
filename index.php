@@ -18,21 +18,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <?php include('content.php') ?>
-            </div>
-            <div class="col-12 bg-success">
-                <div class="row text-white text-center fw-bolder">
-                    <div class="col-4">#Intento</div>
-                    <div class="col-4">Numero</div>
-                    <div class="col-4">Respuesta</div>
-                </div>
-                <div id="attemptsMade" style="min-height: 400px;"></div>
-            </div>
+
+            <?php include('content.php') ?>
         </div>
+        <div class="bg-success">
 
-
-
+            <div class="row text-white fw-bolder">
+                <div class="col-3 text-center">Intentos</div>
+                <div class="col-3 text-center">indagados</div>
+                <div class="col-6 text-center">Respuesta</div>
+            </div>
+            <div id="attemptsMade" style="min-height: 400px;"></div>
+        </div>
         <div id="numberSelecteables" class="row mt-4"></div>
         <div class="row mt-4">
             <div class="col-3 mb-4">

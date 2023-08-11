@@ -204,10 +204,10 @@ const displayInformationReceived = (evaluation) => {
       : "0" + numberInvestigated.toString();
   const responseInvestigated = `B : ${evaluation.good} | R : ${evaluation.regular}`;
   const row = document.createElement("div");
-  row.classList.add("row", "p-1", "text-center", "text-white", "fw-bolder");
-  const columnNumberAttemps = `<div class="col-4 fw-bolder">${numberAttemps}</div>`;
-  const columnNumberInvestisgated = `<div class="col-4 fs-5">${numberInvestigated}</div>`;
-  const columnResponseInvestigated = `<div class="col-4">${responseInvestigated}</div>`;
+  row.classList.add("row", "text-center", "text-white", "fw-bolder");
+  const columnNumberAttemps = `<div class="col-3 text-center fw-bolder">${numberAttemps}</div>`;
+  const columnNumberInvestisgated = `<div class="col-3 text-center fs-5">${numberInvestigated}</div>`;
+  const columnResponseInvestigated = `<div class="col-6 text-center">${responseInvestigated}</div>`;
   row.innerHTML =
     columnNumberAttemps +
     columnNumberInvestisgated +
