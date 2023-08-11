@@ -9,7 +9,6 @@
 </head>
 
 <body class="bg-dark numberSelected">
-    <a class="mt-2 p-2 text-white" href="#" onclick="location.reload();">NEW</a>
     <div class="container mt-3 bg-light bg-gradient">
         <div class="row bg-info text-white">
             <div id="headerLevel" class="p-2 col-4 d-flex justify-content-start fs-2 font-bold"></div>
