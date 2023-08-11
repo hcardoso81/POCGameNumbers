@@ -133,7 +133,7 @@ const generateNumberSelecteables = () => {
   numberSelecteables.innerHTML = "";
   let spanListNumber = "";
   for (let i = 0; i < levels[currentLevel - 1].lengthSelecteables; i++) {
-    spanListNumber += `<div class="col"><button type="button" class="btn btn-dark numberSelected">${i}</button></div>`;
+    spanListNumber += `<div class="col d-flex justify-content-center"><button type="button" class="btn btn-dark numberSelected">${i}</button></div>`;
   }
   numberSelecteables.innerHTML = spanListNumber;
 };

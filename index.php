@@ -8,13 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark numberSelected">
-    <div class="container mt-3 bg-light bg-gradient">
-        <div class="row bg-info text-white">
-            <div id="headerLevel" class="p-2 col-4 d-flex justify-content-start fs-2 font-bold"></div>
-            <div id="headerScore" class="p-2 col-4 d-flex justify-content-center"></div>
-            <div id="headerTimer" class="p-2 col-4 d-flex justify-content-end">
-                <p id="countdown" class="fs-2 font-bold"></p>
+<body class="bg-light bg-gradient">
+    <div class="container">
+        <div class="row bg-info text-white fs-2 font-bold">
+            <div id="headerLevel" class="p-2 col-3 d-flex justify-content-start "></div>
+            <div id="headerScore" class="p-2 col-6 d-flex justify-content-center">Score 0012800</div>
+            <div id="headerTimer" class="p-2 col-3 d-flex justify-content-end">
+                <p id="countdown"></p>
             </div>
         </div>
         <div class="row">
@@ -30,15 +30,29 @@
                 <div id="attemptsMade" style="min-height: 400px;"></div>
             </div>
         </div>
-        <div class="row bg-warning">
-            <div class="col-12">
-                <div id="numberSelecteables" class="row mt-4 mb-3"></div>
+
+
+
+        <div id="numberSelecteables" class="row mt-4"></div>
+        <div class="row mt-4">
+            <div class="col-3 mb-4">
+                <button type="button" class="btn btn-dark w-100" onclick="location.reload()">New</button>
             </div>
-            <div class="col-12">
-                <?php include('footerActionsButtons.php') ?>
+            <div class="col-3 mb-4">
+                <button id="investigateButton" type="button" class="btn btn-primary w-100" disabled>Indagar</button>
+            </div>
+            <div class="col-3 mb-4">
+                <button id="confirmButton" type="button" class="btn btn-success w-100" disabled>All in</button>
+            </div>
+            <div class="col-3 mb-4">
+                <button id="cleanButton" type="button" class="btn btn-danger w-100">Limpiar</button>
             </div>
         </div>
     </div>
+
+
+
+
 
     <div class="modal fade" id="modalResultDiv" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
