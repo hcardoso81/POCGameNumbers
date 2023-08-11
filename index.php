@@ -9,32 +9,33 @@
 </head>
 
 <body class="bg-dark numberSelected">
-    <div class="container mt-5 bg-light bg-gradient">
+    <a class="mt-2 p-2 text-white" href="#" onclick="location.reload();">NEW</a>
+    <div class="container mt-3 bg-light bg-gradient">
         <div class="row bg-info text-white">
-            <div id="headerLevel" class="p-2 col d-flex justify-content-start"></div>
-            <div id="headerScore" class="p-2 col d-flex justify-content-center"></div>
-            <div id="headerTimer" class="p-2 col d-flex justify-content-end">
-                <p id="countdown"></p>
+            <div id="headerLevel" class="p-2 col-4 d-flex justify-content-start fs-2 font-bold"></div>
+            <div id="headerScore" class="p-2 col-4 d-flex justify-content-center"></div>
+            <div id="headerTimer" class="p-2 col-4 d-flex justify-content-end">
+                <p id="countdown" class="fs-2 font-bold"></p>
             </div>
         </div>
-        <div class="row" style="height: 500px;">
-            <div class="col-8">
+        <div class="row">
+            <div class="col-12">
                 <?php include('content.php') ?>
             </div>
-            <div class="col-4 bg-success">
+            <div class="col-12 bg-success">
                 <div class="row text-white text-center fw-bolder">
-                    <div class="col">#Intento</div>
-                    <div class="col">Numero</div>
-                    <div class="col">Respuesta</div>
+                    <div class="col-4">#Intento</div>
+                    <div class="col-4">Numero</div>
+                    <div class="col-4">Respuesta</div>
                 </div>
-                <div class="row" id="attemptsMade"></div>
+                <div id="attemptsMade" style="min-height: 400px;"></div>
             </div>
         </div>
-        <div class="row bg-warning" style="height: 100px;">
-            <div class="col-8">
-                <div id="numberSelecteables" class="row mt-4"></div>
+        <div class="row bg-warning">
+            <div class="col-12">
+                <div id="numberSelecteables" class="row mt-4 mb-3"></div>
             </div>
-            <div class="col-4">
+            <div class="col-12">
                 <?php include('footerActionsButtons.php') ?>
             </div>
         </div>

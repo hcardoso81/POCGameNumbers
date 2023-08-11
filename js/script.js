@@ -25,20 +25,32 @@ var interval;
 const levels = [
   {
     number: 1,
-    time: 10,
-    lengthSecret: 3,
-    lengthSelecteables: 5,
+    time: 60,
+    lengthSecret: 2,
+    lengthSelecteables: 3,
   },
   {
     number: 2,
     time: 90,
-    lengthSecret: 4,
-    lengthSelecteables: 6,
+    lengthSecret: 3,
+    lengthSelecteables: 4,
   },
   {
     number: 3,
-    time: 150,
-    lengthSecret: 4,
+    time: 90,
+    lengthSecret: 3,
+    lengthSelecteables: 6,
+  },
+  {
+    number: 4,
+    time: 120,
+    lengthSecret: 3,
+    lengthSelecteables: 6,
+  },
+  {
+    number: 5,
+    time: 120,
+    lengthSecret: 3,
     lengthSelecteables: 9,
   },
 ];
@@ -59,6 +71,10 @@ const updateCountdown = () => {
   }
 };
 
+const stopTimer = () => {
+  clearInterval(interval);
+};
+
 const initTimer = () => {
   remainingTime = levels[currentLevel - 1].time;
   countdownDisplay.textContent = formatTime(remainingTime);
@@ -69,8 +85,10 @@ const initTimer = () => {
 const clikButtonModalResult = () => {
   modalResultButton.addEventListener("click", (event) => {
     const result = modalResultDiv.getAttribute("data-result");
-    if (result == "false") location.reload();
-
+    if (result == "false") {
+      modalResult.hide();
+      return;
+    }
     modalResultDiv.removeAttribute("data-result");
     modalResult.hide();
     setNextLevel();
@@ -143,11 +161,14 @@ const setNextLevel = () => {
   currentLevel++;
   numberUser = [];
   numberSecret = [];
+  numberAttemps = 0;
   headerLevel.innerHTML = `Level: ${currentLevel}`;
   currentLengthNumbers = levels[currentLevel - 1].lengthSecret;
+  setStateDisabledButtonsActionUser(true);
   generateBoard();
   generateRandomNumbers();
   generateNumberSelecteables();
+  clickNumbersButton();
   initTimer();
 };
 
@@ -178,15 +199,15 @@ const executeEvaluation = () => {
 const displayInformationReceived = (evaluation) => {
   let numberInvestigated = parseInt(numberUser.join(""), 10);
   numberInvestigated =
-    numberInvestigated.toString().length == 2
-      ? "0" + numberInvestigated.toString()
-      : numberInvestigated.toString();
+    numberInvestigated.toString().length == currentLengthNumbers
+      ? numberInvestigated.toString()
+      : "0" + numberInvestigated.toString();
   const responseInvestigated = `B : ${evaluation.good} | R : ${evaluation.regular}`;
   const row = document.createElement("div");
-  row.classList.add("row", "m-1", "text-center", "text-white", "fw-bolder");
-  const columnNumberAttemps = `<div class="col fw-bolder">${numberAttemps}</div>`;
-  const columnNumberInvestisgated = `<div class="col fs-5">${numberInvestigated}</div>`;
-  const columnResponseInvestigated = `<div class="col">${responseInvestigated}</div>`;
+  row.classList.add("row", "p-1", "text-center", "text-white", "fw-bolder");
+  const columnNumberAttemps = `<div class="col-4 fw-bolder">${numberAttemps}</div>`;
+  const columnNumberInvestisgated = `<div class="col-4 fs-5">${numberInvestigated}</div>`;
+  const columnResponseInvestigated = `<div class="col-4">${responseInvestigated}</div>`;
   row.innerHTML =
     columnNumberAttemps +
     columnNumberInvestisgated +
@@ -207,6 +228,7 @@ const cickInvestigateButton = () => {
 };
 
 const executeConfirmation = () => {
+  stopTimer();
   for (let i = 0; i < currentLengthNumbers; i++)
     if (numberUser[i] !== numberSecret[i]) return false;
   return true;
@@ -236,7 +258,7 @@ const processClickNumber = (numberButton, firstEmptyStringIndex) => {
 
 const clickNumbersButton = () => {
   const numbersButton = document.querySelectorAll("button.numberSelected");
-  numbersButton.forEach((numberButton) =>
+  numbersButton.forEach((numberButton) => {
     numberButton.addEventListener("click", (event) => {
       const firstEmptyStringIndex = numberUser.indexOf("");
       if (firstEmptyStringIndex >= 0)
@@ -244,15 +266,14 @@ const clickNumbersButton = () => {
 
       if (firstEmptyStringIndex === currentLengthNumbers - 1)
         setStateDisabledButtonsActionUser(false);
-    })
-  );
+    });
+  });
 };
 
 const addEventListenerToButtons = () => {
   clickCleanButton();
   cickInvestigateButton();
   clickConfirmButton();
-  clickNumbersButton();
   clikButtonModalResult();
 };
 

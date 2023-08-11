@@ -1,4 +1,4 @@
-           <div class="row mt-4">
+           <div class="row mt-4 mb-4">
                <div class="col"></div>
                <div class="col">
                    <button id="investigateButton" type="button" class="btn btn-primary" disabled>Indagar</button>
