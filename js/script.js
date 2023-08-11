@@ -162,7 +162,7 @@ const setNextLevel = () => {
   numberUser = [];
   numberSecret = [];
   numberAttemps = 0;
-  headerLevel.innerHTML = `Level: ${currentLevel}`;
+  headerLevel.innerHTML = `Lvl: ${currentLevel}`;
   currentLengthNumbers = levels[currentLevel - 1].lengthSecret;
   setStateDisabledButtonsActionUser(true);
   generateBoard();
@@ -202,7 +202,7 @@ const displayInformationReceived = (evaluation) => {
     numberInvestigated.toString().length == currentLengthNumbers
       ? numberInvestigated.toString()
       : "0" + numberInvestigated.toString();
-  const responseInvestigated = `B : ${evaluation.good} | R : ${evaluation.regular}`;
+  const responseInvestigated = `<span class="text-warning">B : ${evaluation.good}</span> |<span class="text-info"> R : ${evaluation.regular}</span>`;
   const row = document.createElement("div");
   row.classList.add("row", "text-center", "text-white", "fw-bolder");
   const columnNumberAttemps = `<div class="col-3 text-center fw-bolder">${numberAttemps}</div>`;
