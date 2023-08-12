@@ -100,7 +100,7 @@ const setStateDisabledButtonsActionUser = (flag) => {
   confirmButton.disabled = flag;
 };
 
-const cleanBoard = () => {
+const cleanNumbersSelecteds = () => {
   for (var i = 0; i < currentLengthNumbers; i++) {
     document.getElementById("numberUser" + i).innerHTML = "";
     numberUser[i] = "";
@@ -176,7 +176,7 @@ const setNextLevel = () => {
 
 const clickCleanButton = () => {
   cleanButton.addEventListener("click", (event) => {
-    cleanBoard();
+    cleanNumbersSelecteds();
   });
 };
 
@@ -225,7 +225,7 @@ const processInvestigate = () => {
 const cickInvestigateButton = () => {
   investigateButton.addEventListener("click", (event) => {
     processInvestigate();
-    cleanBoard();
+    cleanNumbersSelecteds();
   });
 };
 
