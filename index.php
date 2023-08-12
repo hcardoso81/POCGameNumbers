@@ -53,6 +53,7 @@
         </div>
         <div id="numberSelecteables" class="row mt-4"></div>
         <div class="row mt-4">
+            <p style="font-size: 0.8.5rem;">Una vez ingresado el número: Indage o Arriesgue.</p>
             <div class="col-3 mb-4">
                 <button type="button" class="btn btn-dark w-100" onclick="location.reload()">New</button>
             </div>
@@ -65,6 +66,8 @@
             <div class="col-3 mb-4">
                 <button id="cleanButton" type="button" class="btn btn-danger w-100">Limpiar</button>
             </div>
+            <p style="font-size: 0.8rem;">New: Start New Game.</p>
+            <p style="font-size: 0.8rem;">Limpiar: Borrar número ingresado.</p>
         </div>
         <div class="modal fade" id="modalResultDiv" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

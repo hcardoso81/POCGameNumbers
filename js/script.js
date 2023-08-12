@@ -37,20 +37,20 @@ const levels = [
   },
   {
     number: 3,
-    time: 90,
+    time: 150,
     lengthSecret: 3,
     lengthSelecteables: 6,
   },
   {
     number: 4,
-    time: 120,
-    lengthSecret: 3,
+    time: 200,
+    lengthSecret: 4,
     lengthSelecteables: 6,
   },
   {
     number: 5,
-    time: 120,
-    lengthSecret: 3,
+    time: 250,
+    lengthSecret: 4,
     lengthSelecteables: 9,
   },
 ];
@@ -132,9 +132,11 @@ const generateRandomNumbers = () => {
 const generateNumberSelecteables = () => {
   numberSelecteables.innerHTML = "";
   let spanListNumber = "";
+  spanListNumber += `  <p style="font-size: 0.8.5rem;">Ingrese los números en orden</p>`;
   for (let i = 0; i < levels[currentLevel - 1].lengthSelecteables; i++) {
     spanListNumber += `<div class="col d-flex justify-content-center"><button type="button" class="btn btn-dark numberSelected">${i}</button></div>`;
   }
+
   numberSelecteables.innerHTML = spanListNumber;
 };
 
@@ -270,6 +272,16 @@ const clickNumbersButton = () => {
   });
 };
 
+const initTooltip = () => {
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  console.log(tooltipTriggerList);
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+};
+
 const addEventListenerToButtons = () => {
   clickCleanButton();
   cickInvestigateButton();
@@ -280,4 +292,5 @@ const addEventListenerToButtons = () => {
 window.addEventListener("DOMContentLoaded", () => {
   setNextLevel();
   addEventListenerToButtons();
+  initTooltip();
 });
