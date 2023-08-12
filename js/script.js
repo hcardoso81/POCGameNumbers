@@ -272,16 +272,6 @@ const clickNumbersButton = () => {
   });
 };
 
-const initTooltip = () => {
-  var tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  console.log(tooltipTriggerList);
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
-};
-
 const addEventListenerToButtons = () => {
   clickCleanButton();
   cickInvestigateButton();
@@ -292,5 +282,4 @@ const addEventListenerToButtons = () => {
 window.addEventListener("DOMContentLoaded", () => {
   setNextLevel();
   addEventListenerToButtons();
-  initTooltip();
 });
